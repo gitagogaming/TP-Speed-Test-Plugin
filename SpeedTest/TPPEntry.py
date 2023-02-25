@@ -11,8 +11,8 @@ TP_PLUGIN_INFO = {
     'name': "SpeedTest",
     "id": PLUGIN_ID,
     'plugin_start_cmd_windows': "%TP_PLUGIN_FOLDER%TPSpeedTest\\TPSpeedtest.exe",
-    'plugin_start_cmd_linux': "sh %TP_PLUGIN_FOLDER%TPSpeedTest\\start.sh",
-    'plugin_start_cmd_mac': "sh %TP_PLUGIN_FOLDER%TPSpeedTest\\start.sh",
+    'plugin_start_cmd_linux': "sh %TP_PLUGIN_FOLDER%TPSpeedTest//start.sh",
+    'plugin_start_cmd_mac': "sh %TP_PLUGIN_FOLDER%TPSpeedTest//start.sh",
     'configuration': {
         'colorDark': '#0d162c',
         'colorLight': '#4b84f3',
