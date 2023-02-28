@@ -17,7 +17,9 @@ running = True
 TPClient = TouchPortalAPI.Client(TP_PLUGIN_INFO["id"])
 g_log = Logger(TP_PLUGIN_INFO["id"])
 
+import platform
 
+SYSTEM = platform.system()
 
 def updateResult(result, kind= None):
     if kind == "Download":
@@ -157,7 +159,14 @@ def getServers():
     return server_list
 
 def startSpeedTest(server):
-    sptest = speedtest.Speedtest()
+    
+    ## if system is linux or macos, use secure = False
+    if SYSTEM == "Linux" or SYSTEM == "Darwin":
+        sptest = speedtest.Speedtest(secure=False)
+    else:
+        sptest = speedtest.Speedtest()
+        
+        
     serverlist = getServers()
     
     ### Clear Previous Results
@@ -230,6 +239,7 @@ def onStart(data):
     servers = getServers()
     serverchoices = ["Best server (based on ping)"]
     serverchoices.extend(list(servers.keys()))
+    
     TPClient.choiceUpdate(TP_PLUGIN_ACTIONS["Start Speedtest"]["data"]["SpeedtestServer"]["id"], serverchoices)
 
     # checking for update
