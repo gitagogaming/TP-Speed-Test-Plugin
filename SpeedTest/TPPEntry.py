@@ -1,6 +1,6 @@
 from TouchPortalAPI.tppbuild import *
 
-__version__ = 2003
+__version__ = 2004
 PLUGIN_ID = "com.KillerBOSS.TPPlugins.TPSpeedTest"
 
 TPSDK_DEFAULT_VERSION = 6
